@@ -1,10 +1,4 @@
-//
-//  SocialTableViewController.swift
-//  SocialSharingDemo
-//
-//  Created by Simon Ng on 5/10/2016.
-//  Copyright © 2016 AppCoda. All rights reserved.
-//
+
 
 import UIKit
 import FacebookShare
@@ -81,6 +75,10 @@ class SocialTableViewController: UITableViewController {
         shareMenu.addAction(twitterAction)
         shareMenu.addAction(facebookAction)
         shareMenu.addAction(cancelAction)
+        
+        if let popoverController = shareMenu.popoverPresentationController {
+            popoverController.barButtonItem = sender as? UIBarButtonItem
+          }
         
         self.present(shareMenu, animated: true, completion: nil)
         
