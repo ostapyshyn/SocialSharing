@@ -47,17 +47,30 @@
         <dict>
             <key>CFBundleURLSchemes</key>
             <array>
-                <string>fb722506361667195</string>
+                <string>del</string>
             </array>
         </dict>
     </array>
     <key>FacebookAppID</key>
-    <string>722506361667195</string>
+    <string>del</string>
     <key>FacebookDisplayName</key>
     <string>Social Sharing Demo</string>
+    
     <key>LSApplicationQueriesSchemes</key>
     <array>
-    <string>fbapi</string> <string>fb-messenger-api</string> <string>fbauth2</string> <string>fbshareextension</string>
+    <string>fbapi</string>
+    <string>fb-messenger-api</string>
+    <string>fbauth2</string> <string>fbshareextension</string>
+    <string>twitter</string> <string>twitterauth</string>
+    </array>
+    
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLSchemes</key>
+            <array>
+    <string>twitterkit-del</string> </array>
+        </dict>
     </array>
     
 </dict>

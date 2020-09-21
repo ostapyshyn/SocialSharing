@@ -10,5 +10,8 @@ target 'SocialSharingDemo' do
 	pod 'FacebookCore'
   pod 'FacebookLogin'
   pod 'FacebookShare'
+  
+  # Pods for Twitter
+  pod 'TwitterKit'
 
 end

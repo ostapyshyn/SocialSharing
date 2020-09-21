@@ -8,6 +8,7 @@
 
 import UIKit
 import FacebookShare
+import TwitterKit
 
 class SecondViewController: UIViewController {
     
@@ -30,7 +31,28 @@ class SecondViewController: UIViewController {
         
         // Display the share menu
         let shareMenu = UIAlertController(title: nil, message: "Share using", preferredStyle: .actionSheet)
-        let twitterAction = UIAlertAction(title: "Twitter", style: .default, handler: nil)
+        let twitterAction = UIAlertAction(title: "Twitter", style: .default) { (action) in
+            
+            let selectedImageName = self.restaurantImages[1]
+            
+            guard let selectedImage = UIImage(named: selectedImageName) else {
+                return
+            }
+            print("1!")
+            let composer = TWTRComposer()
+
+            composer.setText("Love this restaurant!")
+            composer.setImage(selectedImage)
+
+            composer.show(from: self, completion: { (result) in
+                if (result == .done) {
+                    print("Successfully composed Tweet")
+                } else {
+                    print("Cancelled composing!!!")
+                }
+            })
+
+        }
         
         let facebookAction = UIAlertAction(title: "Facebook", style: .default) { (action) in
             let selectedImageName = self.restaurantImages[1]
